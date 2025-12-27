@@ -1,0 +1,65 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Sistema Integral de Gestión de Análisis Empresarial",
+      "type": "REPORTE",
+      "modules": [
+        "MODULO DE FACTURACION",
+        "MODULO DE CIERRE OPERATIVO",
+        "MODULO DE NUMEROS DE CARTERA"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Proyecto SENCILLO",
+      "type": "REPORTE",
+      "modules": [
+        "MODULO DE (SUSPENSIONES PRIMERA VEZ)",
+        "MODULO DE (BANCO DE SEGUNDO RANGO)"
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Proyecto Nuevas Acometidas y Almacen",
+      "type": "REPORTE",
+      "modules": [
+        "MODULO DE (PRODUCCION NUEVAS ACOMETIDAS)",
+        "MODULO DE ALMACEN (RECUENTO DE MATERIALES Y PROCESOS)"
+      ]
+    },
+    {
+      "id": 4,
+      "name": "INVENTORYPRO - SISTEMA DE CONTROL DE MATERIALES",
+      "type": "SISTEMA",
+      "modules": []
+    },
+    {
+      "id": 5,
+      "name": "Admiistrativo",
+      "type": "REPORTE",
+      "modules": [
+        "DASHBOARD DE CONTROL DE CREDITOS",
+        "DESARROLLO DEL SICC (SISTEMA INTEGRAL DE CONTROL DE CREDITOS)"
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Proyecto Gases del caribe",
+      "type": "REPORTE",
+      "modules": [
+        "MODULO DE (ORDENES)",
+        "MODULO DE (PERIODOS)",
+        "MODULO DE (GESTION OPERATIVA Y DESEMPEÑO DE GESTORES)",
+        "MODULO DE (ANALISIS DE PRODUCCION Y FACTURACION)",
+        "MODULO DE (CAUSALES)",
+        "MODULO DE (FACTURACION)",
+        "MODULO DE (CIERRE OPERATIVO)"
+      ]
+    }
+  ],
+  "completedModules": {
+    "4-main": false
+  },
+  "uploads": {}
+}
