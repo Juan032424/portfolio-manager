@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently \"node server.cjs\" \"vite\"",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "start": "concurrently \"node server.cjs\" \"npm run dev\""
+    "start": "node server.cjs"
   },
   "dependencies": {
     "concurrently": "^9.2.1",
