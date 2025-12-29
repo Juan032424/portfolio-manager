@@ -26,3 +26,6 @@ dist-ssr
 
 # Project specific
 uploads/
+
+# Local Netlify folder
+.netlify

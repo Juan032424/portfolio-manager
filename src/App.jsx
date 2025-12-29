@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Upload, Trash2, CheckCircle, Circle, FolderOpen, Plus, X } from 'lucide-react';
 
-const API_URL = 'http://localhost:3005/api';
+const API_URL = '/api';
 
 export default function PortfolioManager() {
   const [projects, setProjects] = useState([]);
@@ -168,16 +168,28 @@ export default function PortfolioManager() {
   const projectProgress = (projectId) => {
     const project = projects.find(p => p.id === projectId);
     if (!project) return 0;
-    if (project.modules.length === 0) return 100;
-    const completed = project.modules.filter(m => completedModules[getModuleKey(projectId, m)]).length;
-    return Math.round((completed / project.modules.length) * 100);
+
+    // If modules is empty, we treat it as 1 "main" module
+    const modulesToCheck = project.modules.length === 0 ? ['main'] : project.modules;
+
+    const uploadedCount = modulesToCheck.filter(m => uploads[getModuleKey(projectId, m)]).length;
+    return Math.round((uploadedCount / modulesToCheck.length) * 100);
   };
 
   const totalProgress = () => {
     if (projects.length === 0) return 0;
-    const allModules = projects.reduce((acc, p) => acc + (p.modules.length || 1), 0);
-    const completed = Object.values(completedModules).filter(Boolean).length;
-    return Math.round((completed / allModules) * 100);
+
+    let totalModules = 0;
+    let totalUploads = 0;
+
+    projects.forEach(p => {
+      const modulesToCheck = p.modules.length === 0 ? ['main'] : p.modules;
+      totalModules += modulesToCheck.length;
+      totalUploads += modulesToCheck.filter(m => uploads[getModuleKey(p.id, m)]).length;
+    });
+
+    if (totalModules === 0) return 0;
+    return Math.round((totalUploads / totalModules) * 100);
   };
 
   if (isLoading) {
